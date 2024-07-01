@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Spacer(),
+            const Spacer(),
             Text(
               'С возвращением!',
               style: TextStyle(
@@ -45,14 +45,17 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 60.h,
             ),
-            Text(
-              'Выйти',
-              style: TextStyle(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.extraDarkBlack),
+            GestureDetector(
+              onTap: Navigator.of(context).pop,
+              child: Text(
+                'Выйти',
+                style: TextStyle(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.extraDarkBlack),
+              ),
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),

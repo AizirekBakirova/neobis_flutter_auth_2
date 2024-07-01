@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => RegistrationScreen(),
+        builder: (context) => const RegistrationScreen(),
       ),
     );
   }
@@ -120,7 +120,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               ElevatedBtnWidget(
                 text: 'Войти',
-                onPressed: () {},
+                onPressed: () {
+                  final route = MaterialPageRoute(
+                    builder: (context) => const HomeScreen(),
+                  );
+                  Navigator.of(context).push(route);
+                },
               ),
               SizedBox(
                 height: 20.sp,

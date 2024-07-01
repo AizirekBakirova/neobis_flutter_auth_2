@@ -27,7 +27,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => HomeScreen(),
+            builder: (context) => const HomeScreen(),
           ),
         );
       }).onError((error, stackTrace) {});
@@ -37,7 +37,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   }
 
   void _showErrorMessage(String message) {
-    Text('Пароли не совпадают');
+    const Text('Пароли не совпадают');
   }
 
   @override
@@ -50,7 +50,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Center(
@@ -60,9 +60,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    icon: Icon(Icons.arrow_back_ios),
+                    icon: const Icon(Icons.arrow_back_ios),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 70,
                   ),
                   Text(
@@ -80,7 +80,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             ),
             Center(
               child: Text(
-                'Создать аккаунт\n          Lorby',
+                'Создать аккаунт\nLorby',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w500,
@@ -90,21 +91,21 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             SizedBox(
               height: 20.h,
             ),
-            TextFiledWidget(
+            const TextFiledWidget(
               hintText: 'Введи адрес почты',
               obscureText: false,
             ),
             SizedBox(
               height: 20.h,
             ),
-            TextFiledWidget(
+            const TextFiledWidget(
               hintText: 'Придумай логин',
               obscureText: false,
             ),
             SizedBox(
               height: 20.h,
             ),
-            TextFiledWidget(
+            const TextFiledWidget(
               hintText: 'Создай пароль',
               obscureText: true,
             ),
@@ -146,7 +147,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             SizedBox(
               height: 10.sp,
             ),
-            TextFiledWidget(
+            const TextFiledWidget(
               hintText: 'Повтори пароль',
               obscureText: true,
             ),
