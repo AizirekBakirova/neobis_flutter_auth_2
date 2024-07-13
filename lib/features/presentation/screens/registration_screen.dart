@@ -37,7 +37,21 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   }
 
   void _showErrorMessage(String message) {
-    Text('Пароли не совпадают');
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            backgroundColor: Colors.white,
+            title: Center(
+              child: Text(
+                message,
+                style: const TextStyle(color: Colors.black45, fontSize: 20),
+              ),
+            ),
+          );
+        });
   }
 
   @override
@@ -91,6 +105,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               height: 20.h,
             ),
             TextFiledWidget(
+              controller: _emailController,
               hintText: 'Введи адрес почты',
               obscureText: false,
             ),
@@ -105,6 +120,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               height: 20.h,
             ),
             TextFiledWidget(
+              controller: _passwordController,
               hintText: 'Создай пароль',
               obscureText: true,
             ),
@@ -147,6 +163,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               height: 10.sp,
             ),
             TextFiledWidget(
+              controller: _confirmPasswordController,
               hintText: 'Повтори пароль',
               obscureText: true,
             ),
