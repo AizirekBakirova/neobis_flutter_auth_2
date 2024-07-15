@@ -11,10 +11,10 @@ class TextFiledWidget extends StatelessWidget {
     this.validator,
     this.suffixIcon,
   });
-  final dynamic controller;
+  final TextEditingController? controller;
   final bool obscureText;
   final String hintText;
-  final dynamic validator;
+  final String? Function(String?)? validator;
   final Widget? suffixIcon;
 
   @override
@@ -22,9 +22,9 @@ class TextFiledWidget extends StatelessWidget {
     return SizedBox(
       width: 343.w,
       height: 52.h,
-      child: TextField(
+      child: TextFormField(
         controller: controller,
-        // validator: validator,
+        validator: validator,
         obscureText: obscureText,
         textAlign: TextAlign.start,
         decoration: InputDecoration(
