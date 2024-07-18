@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:neobis_flutter_auth_2/features/presentation/screens/home_screen.dart';
+import 'package:neobis_flutter_auth_2/features/presentation/screens/send_screen.dart';
 import 'package:neobis_flutter_auth_2/features/presentation/screens/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:neobis_flutter_auth_2/firebase_options.dart';

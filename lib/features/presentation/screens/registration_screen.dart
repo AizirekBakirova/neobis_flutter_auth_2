@@ -58,126 +58,128 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.extraLightWhite,
-      body: Padding(
-        padding:
-            const EdgeInsets.only(left: 13, top: 16, right: 13, bottom: 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 40,
-            ),
-            Center(
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(Icons.arrow_back_ios),
-                  ),
-                  SizedBox(
-                    width: 70,
-                  ),
-                  Text(
-                    'Регистрация',
-                    style: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.extraDarkBlack),
-                  ),
-                ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding:
+              const EdgeInsets.only(left: 13, top: 16, right: 13, bottom: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 40,
               ),
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            Center(
-              child: Text(
-                'Создать аккаунт\n          Lorby',
+              Center(
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: Icon(Icons.arrow_back_ios),
+                    ),
+                    SizedBox(
+                      width: 70,
+                    ),
+                    Text(
+                      'Регистрация',
+                      style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.extraDarkBlack),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              Center(
+                child: Text(
+                  'Создать аккаунт\n          Lorby',
+                  style: TextStyle(
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.extraDarkBlack),
+                ),
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              TextFiledWidget(
+                controller: _emailController,
+                hintText: 'Введи адрес почты',
+                obscureText: false,
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              TextFiledWidget(
+                hintText: 'Придумай логин',
+                obscureText: false,
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              TextFiledWidget(
+                controller: _passwordController,
+                hintText: 'Создай пароль',
+                obscureText: true,
+              ),
+              SizedBox(
+                height: 10.sp,
+              ),
+              Text(
+                '• От 8 до 15 символов',
                 style: TextStyle(
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.extraDarkBlack),
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.mediumDarkGrey,
+                ),
               ),
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            TextFiledWidget(
-              controller: _emailController,
-              hintText: 'Введи адрес почты',
-              obscureText: false,
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            TextFiledWidget(
-              hintText: 'Придумай логин',
-              obscureText: false,
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            TextFiledWidget(
-              controller: _passwordController,
-              hintText: 'Создай пароль',
-              obscureText: true,
-            ),
-            SizedBox(
-              height: 10.sp,
-            ),
-            Text(
-              '• От 8 до 15 символов',
-              style: TextStyle(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w500,
-                color: AppColors.mediumDarkGrey,
+              Text(
+                '• Строчные и прописные буквы',
+                style: TextStyle(
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.mediumDarkGrey,
+                ),
               ),
-            ),
-            Text(
-              '• Строчные и прописные буквы',
-              style: TextStyle(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w500,
-                color: AppColors.mediumDarkGrey,
+              Text(
+                '• Минимум 1 цифра',
+                style: TextStyle(
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.mediumDarkGrey,
+                ),
               ),
-            ),
-            Text(
-              '• Минимум 1 цифра',
-              style: TextStyle(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w500,
-                color: AppColors.mediumDarkGrey,
+              Text(
+                '• Минимум 1 спецсимвол (!, ", #, ...)',
+                style: TextStyle(
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.mediumDarkGrey,
+                ),
               ),
-            ),
-            Text(
-              '• Минимум 1 спецсимвол (!, ", #, ...)',
-              style: TextStyle(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w500,
-                color: AppColors.mediumDarkGrey,
+              SizedBox(
+                height: 10.sp,
               ),
-            ),
-            SizedBox(
-              height: 10.sp,
-            ),
-            TextFiledWidget(
-              controller: _confirmPasswordController,
-              hintText: 'Повтори пароль',
-              obscureText: true,
-            ),
-            SizedBox(
-              height: 20.sp,
-            ),
-            ElevatedBtnWidget(
-              text: 'Далее',
-              onPressed: _signUserUp,
-            ),
-            SizedBox(
-              height: 20.sp,
-            ),
-          ],
+              TextFiledWidget(
+                controller: _confirmPasswordController,
+                hintText: 'Повтори пароль',
+                obscureText: true,
+              ),
+              SizedBox(
+                height: 20.sp,
+              ),
+              ElevatedBtnWidget(
+                text: 'Далее',
+                onPressed: _signUserUp,
+              ),
+              SizedBox(
+                height: 20.sp,
+              ),
+            ],
+          ),
         ),
       ),
     );
