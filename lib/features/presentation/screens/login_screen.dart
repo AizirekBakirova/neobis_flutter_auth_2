@@ -97,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Email не может быть пустым';
-                    } else if (value != _emailController) {
+                    } else if (value != _emailController.text) {
                       return 'Неверный логин или пароль';
                     }
                     return null;
@@ -113,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Пароль не может быть пустым';
-                    } else if (value != _passwordController) {
+                    } else if (value != _passwordController.text) {
                       return 'Неверный логин или пароль';
                     }
                     return null;

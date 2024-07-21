@@ -18,6 +18,21 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
 
+  bool? get hasEnoughCharacters {
+    if (_passwordController.text.isEmpty) return null;
+    return _passwordController.text.length >= 8 &&
+        _passwordController.text.length <= 15;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _passwordController.addListener(_passwordListener);
+      _confirmPasswordController.addListener(_confirmListener);
+    });
+  }
+
   void _signUserUp() async {
     if (_passwordController.text == _confirmPasswordController.text) {
       await FirebaseAuth.instance
@@ -133,7 +148,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 style: TextStyle(
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w500,
-                  color: AppColors.mediumDarkGrey,
+                  color: hasEnoughCharacters == null
+                      ? AppColors.mediumDarkGrey
+                      : hasEnoughCharacters!
+                          ? AppColors.green
+                          : AppColors.red,
                 ),
               ),
               Text(
@@ -183,5 +202,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         ),
       ),
     );
+  }
+
+  void _confirmListener() {}
+
+  void _passwordListener() {
+    setState(() {
+
+    });
   }
 }

@@ -55,21 +55,21 @@ class HomeScreen extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         backgroundColor: Colors.white,
-                        title: Text(
+                        title: const Text(
                           textAlign: TextAlign.center,
                           'Выйти?',
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: AppColors.extraDarkBlack,
                               fontSize: 20,
                               fontWeight: FontWeight.w500),
                         ),
-                        content: SingleChildScrollView(
+                        content: const SingleChildScrollView(
                           child: ListBody(
                             children: [
                               Text(
                                 textAlign: TextAlign.center,
                                 'Точно выйти?',
-                                style: const TextStyle(
+                                style: TextStyle(
                                     color: AppColors.mediumDarkGrey,
                                     fontSize: 16,
                                     fontWeight: FontWeight.w500),
@@ -96,9 +96,9 @@ class HomeScreen extends StatelessWidget {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => LoginScreen()));
+                                          builder: (context) => const LoginScreen()));
                                 },
-                                child: Text('Да, точно')),
+                                child: const Text('Да, точно')),
                           ),
                           SizedBox(
                             height: 20.h,
@@ -109,10 +109,10 @@ class HomeScreen extends StatelessWidget {
                               onTap: () {
                                 Navigator.of(context).pop();
                               },
-                              child: Text(
+                              child: const Text(
                                 textAlign: TextAlign.center,
                                 'Нет, остаться',
-                                style: const TextStyle(
+                                style: TextStyle(
                                     color: AppColors.extraDarkBlack,
                                     fontSize: 16,
                                     fontWeight: FontWeight.w500),
