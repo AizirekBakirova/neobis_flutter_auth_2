@@ -32,7 +32,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         );
       }).onError((error, stackTrace) {});
     } else {
-      _showErrorMessage('Passwords dont match!');
+      _showErrorMessage('Пароли не совпадают!');
     }
   }
 
@@ -47,7 +47,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             title: Center(
               child: Text(
                 message,
-                style: const TextStyle(color: Colors.black45, fontSize: 20),
+                style: const TextStyle(color: Colors.red, fontSize: 20),
               ),
             ),
           );
